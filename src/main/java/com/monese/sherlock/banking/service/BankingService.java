@@ -44,7 +44,11 @@ public class BankingService {
 	public MoneyTransferResponse moneyTransfer(MoneyTransferRequest moneyTransferRequest) {
 		MoneyTransferResponse moneyTransferResponse = new MoneyTransferResponse();
 		Map<Integer, Account> accountMap = getAccountDetails(moneyTransferRequest);
-		if (doesSenderHaveSufficentBalance(accountMap, moneyTransferRequest)) {
+		
+		if (moneyTransferRequest.getAmount().compareTo(BigDecimal.ZERO)==0)
+		{
+			moneyTransferResponse.setResponse("Amount Has to be greater Than 0");
+		}else if (doesSenderHaveSufficentBalance(accountMap, moneyTransferRequest)) {
 			insertTransactions(moneyTransferRequest);
 			updateAccountBalances(moneyTransferRequest);
 			moneyTransferResponse.setResponse("Money Transferred Successfully");
