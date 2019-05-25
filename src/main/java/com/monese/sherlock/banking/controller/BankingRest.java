@@ -14,20 +14,20 @@ import com.monese.sherlock.banking.service.BankingService;
 
 @RestController
 public class BankingRest {
-	
+
 	@Autowired
 	private BankingService bankingService;
-	
+
 	@GetMapping("/account/{accountId}")
-	public AccountDetailsResponse  getAccountStatement(@PathVariable int accountId) {
+	public AccountDetailsResponse getAccountStatement(@PathVariable int accountId) {
 		return bankingService.getAccountDetails(accountId);
-		
+
 	}
-	
+
 	@PostMapping("/moneyTransfer")
-	public MoneyTransferResponse  moneyTransfer(@RequestBody MoneyTransferRequest moneyTransferRequest) {
+	public MoneyTransferResponse moneyTransfer(@RequestBody MoneyTransferRequest moneyTransferRequest) {
 		return bankingService.moneyTransfer(moneyTransferRequest);
-		
+
 	}
 
 }

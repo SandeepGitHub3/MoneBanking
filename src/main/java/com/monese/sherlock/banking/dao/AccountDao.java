@@ -14,18 +14,21 @@ import com.monese.sherlock.banking.dto.Account;
 @Component
 public class AccountDao {
 
-	private static final String UPDATE_BALANCE_SQL="UPDATE ACCOUNT SET BALANCE=:newBalance where ACCOUNT_ID=:accountId";
-	private static final String GET_ACCOUNTS_SQL="SELECT ACCOUNT_ID,ACCOUNT_HOLDER,BALANCE FROM ACCOUNT WHERE ACCOUNT_ID in (:accountIds)";
-	
-	@Autowired 
+	private static final String UPDATE_BALANCE_SQL = "UPDATE ACCOUNT SET BALANCE=:newBalance where ACCOUNT_ID=:accountId";
+	private static final String GET_ACCOUNTS_SQL = "SELECT ACCOUNT_ID,ACCOUNT_HOLDER,BALANCE FROM ACCOUNT WHERE ACCOUNT_ID in (:accountIds)";
+
+	@Autowired
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-	
+
 	public List<Account> getAccounts(List<Integer> accountIds) {
-		return namedParameterJdbcTemplate.query(GET_ACCOUNTS_SQL, new MapSqlParameterSource().addValue("accountIds", accountIds),new BeanPropertyRowMapper<Account>(Account.class));
+		return namedParameterJdbcTemplate.query(GET_ACCOUNTS_SQL,
+				new MapSqlParameterSource().addValue("accountIds", accountIds),
+				new BeanPropertyRowMapper<Account>(Account.class));
 	}
-	
-	public int updateBalance(int accountId,BigDecimal newBalance) {
-		return namedParameterJdbcTemplate.update(UPDATE_BALANCE_SQL, new MapSqlParameterSource().addValue("accountId", accountId).addValue("newBalance", newBalance));
+
+	public int updateBalance(int accountId, BigDecimal newBalance) {
+		return namedParameterJdbcTemplate.update(UPDATE_BALANCE_SQL,
+				new MapSqlParameterSource().addValue("accountId", accountId).addValue("newBalance", newBalance));
 	}
-	
+
 }

@@ -44,11 +44,10 @@ public class BankingService {
 	public MoneyTransferResponse moneyTransfer(MoneyTransferRequest moneyTransferRequest) {
 		MoneyTransferResponse moneyTransferResponse = new MoneyTransferResponse();
 		Map<Integer, Account> accountMap = getAccountDetails(moneyTransferRequest);
-		
-		if (moneyTransferRequest.getAmount().compareTo(BigDecimal.ZERO)==0)
-		{
+
+		if (moneyTransferRequest.getAmount().compareTo(BigDecimal.ZERO) == 0) {
 			moneyTransferResponse.setResponse("Amount Has to be greater Than 0");
-		}else if (doesSenderHaveSufficentBalance(accountMap, moneyTransferRequest)) {
+		} else if (doesSenderHaveSufficentBalance(accountMap, moneyTransferRequest)) {
 			insertTransactions(moneyTransferRequest);
 			updateAccountBalances(moneyTransferRequest);
 			moneyTransferResponse.setResponse("Money Transferred Successfully");
@@ -62,7 +61,7 @@ public class BankingService {
 			MoneyTransferRequest moneyTransferRequest) {
 		BigDecimal senderBalance = accountMap.get(moneyTransferRequest.getSenderAccountId()).getBalance();
 		BigDecimal senderMoneyTransferValue = moneyTransferRequest.getAmount();
-		return senderBalance!=BigDecimal.ZERO && senderMoneyTransferValue.compareTo(senderBalance)<=0;
+		return senderBalance != BigDecimal.ZERO && senderMoneyTransferValue.compareTo(senderBalance) <= 0;
 	}
 
 	private Map<Integer, Account> getAccountDetails(MoneyTransferRequest moneyTransferRequest) {

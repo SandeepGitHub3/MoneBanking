@@ -10,7 +10,4 @@ public class MoneyTransferResponse {
 	public void setResponse(String response) {
 		this.response = response;
 	}
-	
-	
-
 }
