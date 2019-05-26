@@ -3,6 +3,8 @@ package com.monese.sherlock.banking;
 import static org.junit.Assert.assertEquals;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import org.json.JSONException;
 import org.junit.Test;
@@ -29,8 +31,9 @@ public class BankingApplicationIntegrationTest {
 	@LocalServerPort
 	private int port;
 
-	TestRestTemplate restTemplate = new TestRestTemplate();
-	HttpHeaders headers = new HttpHeaders();
+	private TestRestTemplate restTemplate = new TestRestTemplate();
+	private HttpHeaders headers = new HttpHeaders();
+	private DateTimeFormatter df = DateTimeFormatter.ofPattern("YYYY-MM-dd");
 
 	@Test
 	public void testMoneyTransfer() throws JSONException {
@@ -98,8 +101,8 @@ public class BankingApplicationIntegrationTest {
 				+ "            \"amount\": 5,\n" + "            \"transactionDate\": \"2019-05-25\"\n" + "        }\n"
 				+ "    ]\n" + "}";
 
-		JSONAssert.assertEquals(receiverAccountExpectedResponse, receiverAccountResponse.getBody(), false);
-		JSONAssert.assertEquals(senderAccountExpectedResponse, senderAccountResponse.getBody(), false);
+		JSONAssert.assertEquals(receiverAccountExpectedResponse.replace("2019-05-25",LocalDate.now().format(df)), receiverAccountResponse.getBody(), false);
+		JSONAssert.assertEquals(senderAccountExpectedResponse.replace("2019-05-25",LocalDate.now().format(df)), senderAccountResponse.getBody(), false);
 	}
 
 	private void transferZeroAmount() {
