@@ -1,4 +1,4 @@
-# MoneBanking
+# Simple Banking Application
 Sanbox Banking Application
 
 Database Schema
@@ -60,8 +60,8 @@ Sample Response:
 
 Further scope:
 -------------------
-1. Juints to be added for each individual classes.
-2. Add Authentication/Authorization Support.
+1.Juints to be added for each individual classes.
+2.Add Authentication/Authorization Support.
 3.Add validation checks for Requests to guard against Bad Requests.
 4.Add DB level Foreign key and Unique Constraints
 5.Race condition checks.
