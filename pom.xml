@@ -9,8 +9,8 @@
 		<version>2.1.5.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.monese.sherlock</groupId>
-	<artifactId>mone-banking</artifactId>
+	<groupId>com.sherlock</groupId>
+	<artifactId>banking-application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>banking</name>
 	<description>SandBox Banking Application</description>

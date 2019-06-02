@@ -1,4 +1,4 @@
-package com.monese.sherlock.banking;
+package com.sherlock.banking;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

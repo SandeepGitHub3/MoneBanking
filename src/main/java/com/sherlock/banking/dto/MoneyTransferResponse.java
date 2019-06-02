@@ -1,4 +1,4 @@
-package com.monese.sherlock.banking.dto;
+package com.sherlock.banking.dto;
 
 public class MoneyTransferResponse {
 	private String response;

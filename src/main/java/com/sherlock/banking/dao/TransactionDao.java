@@ -1,4 +1,4 @@
-package com.monese.sherlock.banking.dao;
+package com.sherlock.banking.dao;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSourceUtils;
 import org.springframework.stereotype.Component;
 
-import com.monese.sherlock.banking.dto.Transaction;
+import com.sherlock.banking.dto.Transaction;
 
 @Component
 public class TransactionDao {

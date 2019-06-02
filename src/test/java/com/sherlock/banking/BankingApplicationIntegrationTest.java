@@ -1,4 +1,4 @@
-package com.monese.sherlock.banking;
+package com.sherlock.banking;
 
 import static org.junit.Assert.assertEquals;
 
@@ -20,8 +20,9 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.monese.sherlock.banking.dto.MoneyTransferRequest;
-import com.monese.sherlock.banking.dto.MoneyTransferResponse;
+import com.sherlock.banking.BankingApplication;
+import com.sherlock.banking.dto.MoneyTransferRequest;
+import com.sherlock.banking.dto.MoneyTransferResponse;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = BankingApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

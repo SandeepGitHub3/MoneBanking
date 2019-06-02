@@ -1,4 +1,4 @@
-package com.monese.sherlock.banking.dao;
+package com.sherlock.banking.dao;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import com.monese.sherlock.banking.dto.Account;
+import com.sherlock.banking.dto.Account;
 
 @Component
 public class AccountDao {

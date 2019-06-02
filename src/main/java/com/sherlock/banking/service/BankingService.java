@@ -1,4 +1,4 @@
-package com.monese.sherlock.banking.service;
+package com.sherlock.banking.service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -14,13 +14,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
-import com.monese.sherlock.banking.dao.AccountDao;
-import com.monese.sherlock.banking.dao.TransactionDao;
-import com.monese.sherlock.banking.dto.Account;
-import com.monese.sherlock.banking.dto.AccountDetailsResponse;
-import com.monese.sherlock.banking.dto.MoneyTransferRequest;
-import com.monese.sherlock.banking.dto.MoneyTransferResponse;
-import com.monese.sherlock.banking.dto.Transaction;
+import com.sherlock.banking.dao.AccountDao;
+import com.sherlock.banking.dao.TransactionDao;
+import com.sherlock.banking.dto.Account;
+import com.sherlock.banking.dto.AccountDetailsResponse;
+import com.sherlock.banking.dto.MoneyTransferRequest;
+import com.sherlock.banking.dto.MoneyTransferResponse;
+import com.sherlock.banking.dto.Transaction;
 
 @Component
 public class BankingService {
